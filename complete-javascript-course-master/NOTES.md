@@ -12,7 +12,7 @@ through abstractions.
 
 An algorithm on javascript engine removes all unused objects from the computer memory
 
-### Interpreted or just-in-time compiled
+### Interpreted or just-in-time compiled?
 
 Computer only understands zeros and ones (machine code), so programming languages are
 abstractions for the commands computers understands. That means these abstractions need to be translated into
@@ -39,7 +39,25 @@ Execution Contexts have a **Variable Environment**, in which all variables decla
 
 Arrow functions exectution contexts doesn not have nor arguments object, neither this keyword. Instead they can use from the closest regular function parent.
 
-**Call Stack** is an environment where execution contexts get stacked on top of each othe, to keep track of where we are in the execution. The execution context on the top of the stack is the one currently running. After it is done, the next one is run, and so forth.
+**Call Stack** is an environment where execution contexts get stacked on top of each other, to keep track of where we are in the execution. The execution context on the top of the stack is the one currently running. After it is done, the next one is run, and so forth.
+
+### Scope Chain
+
+**Scoping** is how our program's variables are **organized** and **accessed**. JavaScript uses **lexical scoping**, in which scopping is controlled by **placement** of functions and blocks of code.
+
+**Scope** is a space or environment in which a certain variable is **declared** (_variable enviroment in case of functions_). There is **global** scope (top-level code, accessed **everywhere**), **function** scope (accessible only **inside function** and is also called local scope), and **block** scope (accessible only inside block [inside curl braces]). Block Scope applies to **let** and **const** variables. In strict mode, functions are also block scoped. **var** variables are function scoped.
+
+**Scope of a variable** is a region of our code where a certain variable can be **accessed**.
+
+**Scope Chain**: Every scope has access to the variables available in its parent scope. This process is called variable look up. It does not work the other way around.
+
+**"Sibling scopes"** have no access to each other's variables.
+
+**_Call Stack_** order in which functions were **called** and includes Variable Environment. **_Scope Chain_** order in which functions are **written in the code**, but has **nothing** to do with order i which functions are **called**.
+
+### Variable Enviroment
+
+**Hoisting** makes some types of variables accessible/usable in the code before they are actually declared. "Variables lifted to the top of their scope". **Before execution**, code is scanned for variable declarations, and for each variable, a new property is created in the **variable environment object**.
 
 ### Multi-paradigm
 
@@ -68,16 +86,20 @@ JavaScript runs in one single thread, so it can do one thing at a time.
 
 By using an **event loop**, Javascript takes long running tasks, executes them in the "background" and puts them back in the main thread once they are finished
 
-### Scope Chain
+### this keyword/variable
 
-**Scoping** is how our program's variables are **organized** and **accessed**. JavaScript uses **lexical scoping**, in which scopping is controlled by **placement** of functions and blocks of code.
+Special variable that is created for every execution context. Takes the value of (points to) the "owner" of the function in which the this keyword is used.
 
-**Scope** is a space or environment in which a certain variable is **declared** (_variable enviroment in case of functions_). There is **global** scope (top-level code, accessed **everywhere**), **function** scope (accessible only **inside function** and is also called local scope), and **block** scope (accessible only inside block [inside curl braces]). Block Scope applies to **let** and **const** variables. In strict mode, functions are also block scoped. **var** variables are function scoped.
+this is **NOT** static. It depends on **how** the function is called, and its value is only assigned when the function is **actually called**.
 
-**Scope of a variable** is a region of our code where a certain variable can be **accessed**.
+- **Method** this = <Object that is calling the method>
+- **Simple function call** on strict mode, this = undefined, else, global object.
+- **Arrow Function** this = this of surrounding function (lexical this)
+- **Event Listener** this = <DOM element that the handler is attached to>
 
-**Scope Chain**: Every scope has access to the variables available in its parent scope. This process is called variable look up. It does not work the other way around.
+this does **NOT** point to the function itself, and also **NOT** the its variable environment
 
-**"Sibling scopes"** have no access to each other's variables.
+### Primitives x Objects
 
-**_Call Stack_** order in which functions were **called** and includes Variable Environment. **_Scope Chain_** order in which functions are **written in the code**, but has **nothing** to do with order i which functions are **called**.
+**Primitives** are located on the variable enviroment, inside the call stack. When you create a variable, it points to the address in which the actual data is stored, not the data itself. **Objects** are located on the heap. So, the variable points to a reference of the address the actual object are stored on heap. This means that if you if you assign a variable that stores a primitive value into another variable, both variables will point to the same data. if you change the value of one of these variables, the changed variable will get the new value and the other will still have the first one.
+when you do the same thing with an object, you change the value on the heap. Considering both variables will be pointing to the same reference address, the object will be changed to both variables.
