@@ -42,10 +42,10 @@ Special variable that is created for every execution context. Takes the value of
 
 this is **NOT** static. It depends on **how** the function is called, and its value is only assigned when the function is **actually called**.
 
-- **Method** this = <Object that is calling the method>
+- **Method** this = Object that is calling the method
 - **Simple function call** on strict mode, this = undefined, else, global object.
 - **Arrow Function** this = this of surrounding function (lexical this)
-- **Event Listener** this = <DOM element that the handler is attached to>
+- **Event Listener** this = DOM element that the handler is attached to
 
 this does **NOT** point to the function itself, and also **NOT** the its variable environment
 
