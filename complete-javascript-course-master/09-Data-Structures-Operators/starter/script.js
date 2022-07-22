@@ -1018,3 +1018,4 @@ formattedFlights.forEach(flight => {
   const final = str.padStart(45);
   console.log(final);
 });
+//poderia ter obtido os resultados com desestruturação do array
