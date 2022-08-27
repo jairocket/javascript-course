@@ -527,3 +527,38 @@ console.log(owners.sort());
 // return > 0 -> B, A
 movements.sort((a, b) => a - b); //ascending
 movements.sort((a, b) => b - a); //descending
+
+const art = [1, 2, 3, 4, 5, 6, 7];
+console.log([1, 2, 3, 4, 5, 6, 7]);
+//create an empty array
+console.log(new Array([1, 2, 3, 4, 5, 6, 7]));
+
+const x = new Array(7);
+const y = new Array(7);
+console.log(x);
+
+//fill array x with 1
+x.fill(1);
+console.log(x);
+//fill array y with 1 starting from index 3
+y.fill(1, 3);
+console.log(y);
+// insert elements from index 4 to 6
+art.fill(23, 4, 6);
+console.log(art);
+
+//Array.from
+
+const z = Array.from({ length: 7 }, () => 1);
+console.log(z);
+const w = Array.from({ length: 7 }, (_, i) => i + 1);
+console.log(w);
+
+labelBalance.addEventListener('click', function () {
+  const movementsUI = Array.from(
+    document.querySelectorAll('.movements__value'),
+    el => Number(el.textContent.replace('€', ''))
+  );
+  console.log(movementsUI);
+  const movementsU2 = [...document.querySelectorAll('.movements__value')];
+});
