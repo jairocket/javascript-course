@@ -105,25 +105,25 @@ tabsContainer.addEventListener('click', function (e) {
     .classList.add('operations__content--active');
 });
 
-// const handleHover = function (e) {
-//   if (e.target.classList.contains('nav__link')) {
-//     const link = e.target;
-//     const siblings = link.closest('.nav').querySelectorAll('.nav__link');
-//     const logo = link.closest('.nav').querySelector('img');
+const handleHover = function (e) {
+  if (e.target.classList.contains('nav__link')) {
+    const link = e.target;
+    const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+    const logo = link.closest('.nav').querySelector('img');
 
-//     siblings.forEach(el => {
-//       if (el !== link) el.style.opacity = this;
-//     });
-//     logo.style.opacity = this;
-//   }
-// };
+    siblings.forEach(el => {
+      if (el !== link) el.style.opacity = this;
+    });
+    logo.style.opacity = this;
+  }
+};
 
 // // it is impossible to pass more than one argument to a event handler function
 // // bind set this keyword to whatever value we pass as argument
 // // we could pass an array or an object if we need to pass more than one argument
-// nav.addEventListener('mouseover', handleHover.bind(0.5));
+nav.addEventListener('mouseover', handleHover.bind(0.5));
 
-// nav.addEventListener('mouseout', handleHover.bind(1));
+nav.addEventListener('mouseout', handleHover.bind(1));
 
 //Sticky navigation: Intersection Observer API
 
@@ -216,6 +216,91 @@ const imgObserver = new IntersectionObserver(loadImg, {
 });
 
 imgTargets.forEach(img => imgObserver.observe(img));
+
+//slider
+const slider = function () {
+  const slides = document.querySelectorAll('.slide');
+  const btnLeft = document.querySelector('.slider__btn--left');
+  const btnRight = document.querySelector('.slider__btn--right');
+  const slider = document.querySelector('.slider');
+  const dotContainer = document.querySelector('.dots');
+
+  let curSlide = 0;
+  const maxSlide = slides.length;
+
+  //functions
+  const createDots = function () {
+    slides.forEach(function (_, i) {
+      dotContainer.insertAdjacentHTML(
+        'beforeend',
+        `<button class="dots__dot" data-slide="${i}"></button`
+      );
+    });
+  };
+
+  const activteDot = function (slide) {
+    document
+      .querySelectorAll('.dots__dot')
+      .forEach(dot => dot.classList.remove('dots__dot--active'));
+    document
+      .querySelector(`.dots__dot[data-slide="${slide}"]`)
+      .classList.add('dots__dot--active');
+  };
+
+  const goToSlide = function (slide) {
+    slides.forEach(
+      (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`)
+    );
+  };
+
+  const nextSlide = function () {
+    if (curSlide === maxSlide - 1) {
+      curSlide = 0;
+    } else {
+      curSlide++;
+    }
+    goToSlide(curSlide);
+    activteDot(curSlide);
+  };
+  const prevSlide = function () {
+    if (curSlide === 0) {
+      curSlide = maxSlide - 1;
+    } else {
+      curSlide--;
+    }
+    goToSlide(curSlide);
+    activteDot(curSlide);
+  };
+
+  const init = function () {
+    goToSlide(0);
+    createDots();
+    activteDot(0);
+  };
+  init();
+
+  //Event Handlers
+
+  btnRight.addEventListener('click', nextSlide);
+  btnLeft.addEventListener('click', prevSlide);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') prevSlide();
+    e.key === 'ArrowRight' && nextSlide();
+  });
+
+  dotContainer.addEventListener('click', function (e) {
+    if (e.target.classList.contains('dots__dot')) {
+      console.log('dot');
+      const { slide } = e.target.dataset;
+      goToSlide(slide);
+      activteDot(slide);
+    }
+  });
+
+  slider.style.overflow = 'visible';
+};
+slider();
 
 //Selecting elements
 
@@ -398,3 +483,73 @@ Bubbling phase -> event travels back to the root of the DOM, triggering all even
 // [...h1.parentElement.children].forEach(function (el) {
 //   if (el !== h1) el.style.transform = 'scale(1.5)';
 // });
+
+document.addEventListener('DOMContentLoaded', function (e) {
+  console.log('HTML parsed and DOM tree built!', e);
+});
+
+window.addEventListener('load', function (e) {
+  console.log('Page fully loaded', e);
+});
+
+// window.addEventListener('beforeunload', function (e) {
+//   e.preventDefault();
+//   console.log(e);
+//   e.returnValue = '';
+// });
+
+/*
+Regular
+<script src="script.js">
+
+Head ->  DO NOT DO THIS
+
+1 - starts to parse HTML
+2 - pause parsing HTML
+3 - Fetch script
+4 - execute script
+5 - finish parsing HTML
+6 - DOMContentLoaded is triggered
+
+Body end ->
+
+1 - parse all HTML
+2 - fetch script
+3 - execute script
+4 - DOMContentLoaded is triggered
+
+Async
+<script async src="script.js">
+
+Head ->
+
+1 - Parsing HTML and Fetch Script
+2 - Pause parsint HTML to execute script
+3 - finish parsing HTML
+4 - DOMContentLoaded is triggered
+
+scripts not garanteed to execute in order
+use for 3rd party scripts where order doesn't matter(e.g. Google Analytics)
+
+
+Body end ->
+
+Makes no difference
+
+Defer
+<script defer src="script.js">
+
+Head ->
+
+1 - Parsing HTML and Fetch Script
+2 - Execution is defered until HTML parsing is finished
+3 - DOMContentLoaded is triggered
+
+scripts are executed in order;
+best solution! Use for your own scripts and when order matters (e.g. including a library)
+
+Body end ->
+
+Makes no difference
+
+*/
