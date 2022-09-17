@@ -38,3 +38,29 @@ The child class _extends_ parent class methods and properties and have its own.
 **Polymorphism**
 
 A child class can overwrite a method it inherited from a parent class.
+
+**OOP IN JS: PROTOTYPES**
+
+All Objects in JavaScript are linked to a prototype object.
+Prototype objects contains methods that are accessible to all objects linked to it. This behaviour is known as Prototypal inheritance/delegation.
+
+Behavior is delegated to the linked prototype.
+
+**3 of implementing prototypal inheritance in javascript**
+
+Constructor Functions
+
+- Tecnique to create objects from a function
+- This is how built-in objects like Arrays, Maps or Sets are actually implemented
+
+ES6 Classes
+
+- Modern alternative to constructor function syntax
+- "Syntactic Sugar": behind the scenes, ES6 classes work exactly like constructor functions
+- ES6 classes do NOT behave like classes in "classical OOP"
+
+Object.create()
+
+- The easiest and most straightforward way of linking an object to a prototype object
+
+**4 pilars of OOP are still valid: _Abstraction_, _Encapsulation_, _Inheritance_ and _Polymorphism_**
