@@ -199,6 +199,8 @@
   "version" "1.0.3"
 
 "cors@latest":
+  "integrity" "sha512-KIHbLJqu73RGr/hnbrO9uBeixNGuvSQjul/jdFvS/KFSIH1hWVd1ng7zOHx+YrEfInLG7q4n6GHQ9cDtxv/P6g=="
+  "resolved" "https://nexus.dc.ifood.com.br/repository/ifood-npm/cors/-/cors-2.8.5.tgz"
   "version" "2.8.5"
   dependencies:
     "object-assign" "^4"
@@ -835,6 +837,8 @@
   "version" "1.0.2"
 
 "opn@latest":
+  "integrity" "sha512-I9PKfIZC+e4RXZ/qr1RhgyCnGgYX0UEIlXgWnCOVACIvFgaC9rz6Won7xbdhoHrd8IIhV7YEpHjreNUNkqCGkQ=="
+  "resolved" "https://nexus.dc.ifood.com.br/repository/ifood-npm/opn/-/opn-6.0.0.tgz"
   "version" "6.0.0"
   dependencies:
     "is-wsl" "^1.1.0"
@@ -871,12 +875,19 @@
   "resolved" "https://nexus.dc.ifood.com.br/repository/ifood-npm/posix-character-classes/-/posix-character-classes-0.1.1.tgz"
   "version" "0.1.1"
 
+"prettier@2.7.1":
+  "integrity" "sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g=="
+  "resolved" "https://nexus.dc.ifood.com.br/repository/ifood-npm/prettier/-/prettier-2.7.1.tgz"
+  "version" "2.7.1"
+
 "process-nextick-args@~2.0.0":
   "integrity" "sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag=="
   "resolved" "https://nexus.dc.ifood.com.br/repository/ifood-npm/process-nextick-args/-/process-nextick-args-2.0.1.tgz"
   "version" "2.0.1"
 
 "proxy-middleware@latest":
+  "integrity" "sha512-EGCG8SeoIRVMhsqHQUdDigB2i7qU7fCsWASwn54+nPutYO8n4q6EiwMzyfWlC+dzRFExP+kvcnDFdBDHoZBU7Q=="
+  "resolved" "https://nexus.dc.ifood.com.br/repository/ifood-npm/proxy-middleware/-/proxy-middleware-0.15.0.tgz"
   "version" "0.15.0"
 
 "range-parser@~1.2.1":
@@ -957,6 +968,8 @@
     "ret" "~0.1.10"
 
 "send@latest":
+  "integrity" "sha512-qqWzuOjSFOuqPjFe4NOsMLafToQQwBSOEpS+FwEt3A2V3vKubTquT3vmLTQpFgMXp8AlFWFuP1qKaJZOtPpVXg=="
+  "resolved" "https://nexus.dc.ifood.com.br/repository/ifood-npm/send/-/send-0.18.0.tgz"
   "version" "0.18.0"
   dependencies:
     "debug" "2.6.9"

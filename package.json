@@ -2,5 +2,8 @@
   "dependencies": {
     "leaflet": "^1.8.0",
     "live-server": "^1.2.2"
+  },
+  "devDependencies": {
+    "prettier": "2.7.1"
   }
 }
