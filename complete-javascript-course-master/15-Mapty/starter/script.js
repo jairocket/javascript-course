@@ -79,7 +79,11 @@ class App {
   #workouts = [];
 
   constructor() {
+    //get users position
     this._getPosition();
+
+    // get data from local storage
+    this._getLocalStorage();
 
     form.addEventListener('submit', this._newWorkout.bind(this)); //overwrite this to object instead of the DOM element
 
@@ -98,11 +102,8 @@ class App {
   }
 
   _loadMap(position) {
-    console.log(position);
     const { latitude, longitude } = position.coords;
-    console.log(`https://www.google.com.br/maps/@${latitude},${longitude}`);
 
-    console.log(L);
     this.#map = L.map('map').setView([latitude, longitude], this.#mapZoomLevel);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -111,6 +112,10 @@ class App {
     }).addTo(this.#map);
 
     this.#map.on('click', this._showform.bind(this));
+
+    this.#workouts.forEach(work => {
+      this._renderWorkoutMarker(work);
+    });
   }
 
   _showform(mapE) {
@@ -183,6 +188,10 @@ class App {
     //Hide form and clear input fields
 
     this._hideForm();
+
+    //Set local storage to all workouts
+
+    this._setLocalStorage();
   }
   _renderWorkoutMarker(workout) {
     L.marker(workout.coords)
@@ -202,7 +211,6 @@ class App {
       .openPopup();
   }
   _renderWorkout(workout) {
-    console.log(workout);
     let html = `      
     <li class="workout workout--${workout.type}" data-id=${workout.id}>
       <h2 class="workout__title">${workout.description}</h2>
@@ -266,8 +274,33 @@ class App {
         duration: 1,
       },
     });
-    workout.click();
+    // workout.click();
+  }
+
+  _setLocalStorage() {
+    localStorage.setItem('workouts', JSON.stringify(this.#workouts));
+  }
+
+  _getLocalStorage() {
+    const data = JSON.parse(localStorage.getItem('workouts'));
+
+    if (!data) return;
+    this.#workouts = data;
+
+    this.#workouts.forEach(work => {
+      this._renderWorkout(work);
+    });
+  }
+  reset() {
+    localStorage.removeItem('workouts');
+    location.reload();
   }
 }
 
 const app = new App();
+
+/*
+when we convert objects to strings using JSON.stringify() and then back
+to objects using JSON.parse(), we lost the prototype chain, therefore they
+won't inherit the methods and properties of it
+*/
