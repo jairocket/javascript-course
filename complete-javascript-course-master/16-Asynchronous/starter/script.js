@@ -97,33 +97,108 @@ IP -> is the protocol that ensures data to find their destination. computers adr
 const btn = document.querySelector('.btn-country');
 const countriesContainer = document.querySelector('.countries');
 
-const getCountryData = function (country) {
-  const request = new XMLHttpRequest();
-  request.open('GET', `https://restcountries.com/v2/name/${country}`);
-  request.send();
-  request.addEventListener('load', function () {
-    const [data] = JSON.parse(this.responseText);
-    console.log(data);
-    const html = `
-  <article class="country">
-    <img class="country__img" src=${data.flag} />
-      <div class="country__data">
-        <h3 class="country__name">${data.name}</h3>
-        <h4 class="country__region">${data.region}</h4>
-        <p class="country__row"><span>👫</span>${(
-          data.population / 1000000
-        ).toFixed(1)} Mi</p>
-        <p class="country__row"><span>🗣️</span>${data.languages[0].name}</p>
-        <p class="country__row"><span>💰</span>${data.currencies[0].name}</p>
-      </div>
-  `;
-    countriesContainer.insertAdjacentHTML('beforeend', html);
-    countriesContainer.style.opacity = 1;
-  });
-};
+// const getCountryData = function (country) {
+//   const request = new XMLHttpRequest();
+//   request.open('GET', `https://restcountries.com/v2/name/${country}`);
+//   request.send();
+//   request.addEventListener('load', function () {
+//     const [data] = JSON.parse(this.responseText);
+//     console.log(data);
+//     const html = `
+//   <article class="country">
+//     <img class="country__img" src=${data.flag} />
+//       <div class="country__data">
+//         <h3 class="country__name">${data.name}</h3>
+//         <h4 class="country__region">${data.region}</h4>
+//         <p class="country__row"><span>👫</span>${(
+//           data.population / 1000000
+//         ).toFixed(1)} Mi</p>
+//         <p class="country__row"><span>🗣️</span>${data.languages[0].name}</p>
+//         <p class="country__row"><span>💰</span>${data.currencies[0].name}</p>
+//       </div>
+//   `;
+//     countriesContainer.insertAdjacentHTML('beforeend', html);
+//     countriesContainer.style.opacity = 1;
+//   });
+// };
 
-getCountryData('portugal');
-getCountryData('italy');
-getCountryData('switzerland');
-getCountryData('brazil');
-getCountryData('usa');
+// getCountryData('portugal');
+// getCountryData('italy');
+// getCountryData('switzerland');
+// getCountryData('brazil');
+// getCountryData('usa');
+// getCountryData('portugal');
+// getCountryData('italy');
+// getCountryData('switzerland');
+// getCountryData('brazil');
+// getCountryData('usa');
+
+// const renderCountry = function (data, className = '') {
+//   const html = `
+//     <article class=${className}>
+//       <img class="country__img" src=${data.flag} />
+//         <div class="country__data">
+//           <h3 class="country__name">${data.name}</h3>
+//           <h4 class="country__region">${data.region}</h4>
+//           <p class="country__row"><span>👫</span>${(
+//             data.population / 1000000
+//           ).toFixed(1)} Mi</p>
+//           <p class="country__row"><span>🗣️</span>${data.languages[0].name}</p>
+//           <p class="country__row"><span>💰</span>${data.currencies[0].name}</p>
+//         </div>
+//     `;
+//   countriesContainer.insertAdjacentHTML('beforeend', html);
+//   countriesContainer.style.opacity = 1;
+// };
+
+// const getCountryAndNeighbor = function (country) {
+//   const request = new XMLHttpRequest();
+//   request.open('GET', `https://restcountries.com/v2/name/${country}`);
+//   request.send();
+//   request.addEventListener('load', function () {
+//     const [data] = JSON.parse(this.responseText);
+//     console.log(data);
+//     renderCountry(data);
+//     const neighbour = data.borders?.[0];
+
+//     const request2 = new XMLHttpRequest();
+//     request2.open('GET', `https://restcountries.com/v2/alpha/${neighbour}`);
+//     request2.send();
+//     request2.addEventListener('load', function () {
+//       const data2 = JSON.parse(this.responseText);
+//       renderCountry(data2, 'neighbour');
+//     });
+//   });
+// };
+
+// getCountryAndNeighbor('portugal');
+
+const request = fetch('https://restcountries.com/v2/name/portugal');
+console.log(request); //promise <pending>
+
+/* 
+Promise is an object that is used as placeholder for the future result of an asynchronous operation.
+Could be imagine as a container for an asynchronously delivered value or a container for a future value.
+
+We no longer need to rely on events and callbacks passed into asynchronous functions to handle asynchronous
+results
+
+Instead of nesting callbacks, we can chain promises for a sequence of asynchronous operations: escaping
+callback hell
+
+Promise lifecycle
+
+Pending: Before the future value is available
+
+Settled: Asynchronous task has finished
+
+Settled and Fullfilled - the result is now available
+
+Settled and Rejected - An error ocurred
+
+We are able to handle these different states in our code
+
+We consume promise when we already have a promise. E.g. promise returned from Fetch API
+
+Sometimes we need to build promises
+*/
