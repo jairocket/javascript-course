@@ -317,9 +317,68 @@ const whereAmI = function (lat, lng) {
     })
     .then(data => getCountryData(data.country))
     .then(data => renderCountry(data))
-    .catch(err => console.log(err));
+    .catch(err => console.error(err.message));
 };
 
 whereAmI(52.508, 13.381);
 whereAmI(19.037, 72.873);
 whereAmI(-33.933, 18.474);
+
+/*
+Reviewing
+
+Runtime => container which includes all the pieces necessary to execute JavaScript code
+JS Engine => Runtime part in which code is executed (call stack) and objects are 
+stored in memory (heap)
+JavaScript only executes one thread of execution.
+WEB Api +> API provided to the engine
+Callstack queue => ready to be executed callback functions (coming from events)
+Event loop sends callbacks from queue to call stack
+
+Asynchronous tasks run in the web API environment, that's why it doesn't block call stack.
+Once the asynchronous task is finished and its effect attached to the callback function, it is put on
+the callback queue, that works as a todo list for the call stack. it goes straight to the end of the line.
+Then Event loop checks if call stack is empty. If so, it sends the callback from the asynchronous task
+to the call stack
+Promises are executed on the web API's environment. When the data arrives, it is sent to the
+microtasks queue. It has priority over callback queue.
+
+*/
+
+console.log('test start'); //1
+setTimeout(() => console.log('0 sec timer'), 0); //4
+Promise.resolve('Resolved promise1').then(res => console.log(res)); //3
+// Promise.resolve('Resolved promise 2').then(res => {
+//   for (let i = 0; i < 100000000; i++) {}
+// });
+console.log('Test end'); //2
+
+//Create promises
+const lotteryPromise = new Promise(function (resolve, reject) {
+  console.log('lottery draw is happening');
+  setTimeout(() => {
+    if (Math.random() >= 0.5) {
+      resolve('You WIN!');
+    } else {
+      reject(new Error('you lost money'));
+    }
+  }, 2000);
+});
+lotteryPromise.then(res => console.log(res)).catch(err => console.error(err));
+
+//primisifying setTimout
+const wait = function (seconds) {
+  return new Promise(function (resolve) {
+    setInterval(resolve, seconds * 1000);
+  });
+};
+
+wait(2)
+  .then(() => {
+    console.log('I waited for 2 seconds');
+    return wait(1);
+  })
+  .then(() => console.log('I waited for 1 seconds'));
+
+Promise.resolve('abc').then(x => console.log(x)); //resolve promises immediately
+Promise.reject(new Error('xyz')).catch(err => console.error(err)); //reject promises immediately
