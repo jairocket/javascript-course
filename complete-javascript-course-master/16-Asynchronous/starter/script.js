@@ -134,44 +134,49 @@ const imgContainer = document.querySelector('.images');
 // // getCountryData('brazil');
 // // getCountryData('usa');
 
-// const renderCountry = function (data, className = '') {
-//   const html = `
-//     <article class=${className}>
-//       <img class="country__img" src=${data.flag} />
-//         <div class="country__data">
-//           <h3 class="country__name">${data.name}</h3>
-//           <h4 class="country__region">${data.region}</h4>
-//           <p class="country__row"><span>👫</span>${(
-//             data.population / 1000000
-//           ).toFixed(1)} Mi</p>
-//           <p class="country__row"><span>🗣️</span>${data.languages[0].name}</p>
-//           <p class="country__row"><span>💰</span>${data.currencies[0].name}</p>
-//         </div>
-//     `;
-//   countriesContainer.insertAdjacentHTML('beforeend', html);
-// };
-// const renderError = function (msg) {
-//   countriesContainer.insertAdjacentText('beforeend', msg);
-// };
-// // const getCountryAndNeighbor = function (country) {
-// //   const request = new XMLHttpRequest();
-// //   request.open('GET', `https://restcountries.com/v2/name/${country}`);
-// //   request.send();
-// //   request.addEventListener('load', function () {
-// //     const [data] = JSON.parse(this.responseText);
-// //     console.log(data);
-// //     renderCountry(data);
-// //     const neighbour = data.borders?.[0];
+const renderCountry = function (data, className = '') {
+  console.log(data);
+  const html = `
+    <article class=${className}>
+      <img class="country__img" src=${data.flag} />
+        <div class="country__data">
+          <h3 class="country__name">${data.name}</h3>
+          <h4 class="country__region">${data.region}</h4>
+          <p class="country__row"><span>👫</span>${(
+            data.population / 1000000
+          ).toFixed(1)} Mi</p>
+          <p class="country__row"><span>🗣️</span>${data.languages[0].name}</p>
+          <p class="country__row"><span>💰</span>${data.currencies[0].name}</p>
+        </div>
+    `;
+  countriesContainer.insertAdjacentHTML('beforeend', html);
+  countriesContainer.style.opacity = 1;
+  console.log(html);
+};
+const renderError = function (msg) {
+  countriesContainer.insertAdjacentText('beforeend', msg);
+  console.log('deu ruim');
+  countriesContainer.style.opacity = 1;
+};
+// const getCountryAndNeighbor = function (country) {
+//   const request = new XMLHttpRequest();
+//   request.open('GET', `https://restcountries.com/v2/name/${country}`);
+//   request.send();
+//   request.addEventListener('load', function () {
+//     const [data] = JSON.parse(this.responseText);
+//     console.log(data);
+//     renderCountry(data);
+//     const neighbour = data.borders?.[0];
 
-// //     const request2 = new XMLHttpRequest();
-// //     request2.open('GET', `https://restcountries.com/v2/alpha/${neighbour}`);
-// //     request2.send();
-// //     request2.addEventListener('load', function () {
-// //       const data2 = JSON.parse(this.responseText);
-// //       renderCountry(data2, 'neighbour');
-// //     });
-// //   });
-// // };
+//     const request2 = new XMLHttpRequest();
+//     request2.open('GET', `https://restcountries.com/v2/alpha/${neighbour}`);
+//     request2.send();
+//     request2.addEventListener('load', function () {
+//       const data2 = JSON.parse(this.responseText);
+//       renderCountry(data2, 'neighbour');
+//     });
+//   });
+// };
 
 // // getCountryAndNeighbor('portugal');
 
@@ -205,14 +210,14 @@ const imgContainer = document.querySelector('.images');
 // Sometimes we need to build promises
 // */
 
-// const getJSON = function (url, errorMessage = 'Something went wrong') {
-//   return fetch(url).then(response => {
-//     if (!response.ok) {
-//       throw new Error(`${errorMessage} (${response.status})`);
-//     }
-//     return response.json();
-//   });
-// };
+const getJSON = function (url, errorMessage = 'Something went wrong') {
+  return fetch(url).then(response => {
+    if (!response.ok) {
+      throw new Error(`${errorMessage} (${response.status})`);
+    }
+    return response.json();
+  });
+};
 
 // // const getCountryData = function (country) {
 // //   fetch(`https://restcountries.com/v2/name/${country}`)
@@ -432,27 +437,27 @@ const createImage = function (imgPath) {
 PART 2
 2. Comsume the promise using .then and also add an error handler;
 */
-createImage('img/img-1.jpg').then(image => {
-  wait(2)
-    .then(() => {
-      image.style.display = 'none';
-      return image;
-    })
-    .then(image => {
-      wait(2)
-        .then(() => {
-          image.src = 'img/img-2.jpg';
-          image.style.display = '';
-          return image;
-        })
-        .then(image => {
-          wait(2).then(() => (image.style.display = 'none'));
-        });
-    })
-    .catch(err => console.error(err));
+// createImage('img/img-1.jpg').then(image => {
+//   wait(2)
+//     .then(() => {
+//       image.style.display = 'none';
+//       return image;
+//     })
+//     .then(image => {
+//       wait(2)
+//         .then(() => {
+//           image.src = 'img/img-2.jpg';
+//           image.style.display = '';
+//           return image;
+//         })
+//         .then(image => {
+//           wait(2).then(() => (image.style.display = 'none'));
+//         });
+//     })
+//     .catch(err => console.error(err));
 
-  return image;
-});
+//   return image;
+// });
 
 /*
 
@@ -470,3 +475,132 @@ TEST DATA: Images in the img folder. Test the error handler by passing a wrong i
 
 GOOD LUCK 😀
 */
+const getPosition = function () {
+  return new Promise(function (resolve, reject) {
+    // navigator.geolocation.getCurrentPosition(
+    //   position => resolve(position),
+    //   err => reject(err)
+    // );
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+};
+const whereAmI = async function () {
+  try {
+    const pos = await getPosition();
+    console.log(pos);
+    const { latitude, longitude } = pos.coords;
+    const geo = await fetch(
+      `https://geocode.xyz/${latitude},${longitude}?geoit=json`
+    );
+    if (!geo.ok) {
+      throw new Error('Easy bro... reloading too fast 8)');
+    }
+    const dataGeo = await geo.json();
+    const res = await fetch(
+      `https://restcountries.com/v2/name/${dataGeo.country}`
+    );
+    if (!res.ok) {
+      throw new Error('Oh, Jeez! Never heard of this country before...');
+    }
+    const [data] = await res.json();
+    console.log(data);
+    renderCountry(data);
+    return `You are in ${dataGeo.city}, ${dataGeo.country}`;
+  } catch (error) {
+    console.error(error.message);
+    renderError(`Something went wrong... ${error.message}`);
+  }
+};
+// const city = whereAmI();
+
+// // try {
+// //   let y = 1;
+// //   const x = 2;
+// //   x = 3;
+// // } catch (err) {
+// //   alert(err.message);
+// // }
+
+// console.log(city); //<Promise>
+// whereAmI().then(city => console.log(city)); //"you are in Salvador, Brasil"
+
+(async function () {
+  try {
+    const city = await whereAmI();
+    console.log(city);
+  } catch (error) {
+    console.error(error.message);
+  } finally {
+    console.log('Finished getting location');
+  }
+})();
+
+//Promise.all
+
+const get3Countries = async function (c1, c2, c3) {
+  try {
+    //Considering the promises below do not depend on each other, instead of run them
+    //one at a time as commented, we can use Promise.all() to run them in parallel:
+
+    // const [data1] = await getJSON(`https://restcountries.com/v2/name/${c1}`);
+    // const [data2] = await getJSON(`https://restcountries.com/v2/name/${c2}`);
+    // const [data3] = await getJSON(`https://restcountries.com/v2/name/${c3}`);
+    // console.log(data1.capital, data2.capital, data3.capital);
+    const data = await Promise.all([
+      getJSON(`https://restcountries.com/v2/name/${c1}`),
+      getJSON(`https://restcountries.com/v2/name/${c2}`),
+      getJSON(`https://restcountries.com/v2/name/${c3}`),
+    ]);
+    console.log(data.map(d => d[0].capital));
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+// get3Countries('portugal', 'tanzania', 'brazil');
+
+//Promise.race
+
+//The first promise passed in the Promise.race array to be fullfilled will be the
+//returned value from Promise.race
+
+(async function () {
+  const res = await Promise.race([
+    getJSON(`https://restcountries.com/v2/name/Russia`),
+    getJSON(`https://restcountries.com/v2/name/Italy`),
+    getJSON(`https://restcountries.com/v2/name/Japan`),
+  ]);
+  console.log(res[0]);
+})();
+
+const timeout = function (s) {
+  return new Promise(function (_, reject) {
+    setTimeout(function () {
+      reject(new Error('Request took too long!'));
+    }, s);
+  });
+};
+
+Promise.race([getJSON(`https://restcountries.com/v2/name/Japan`), timeout(30)])
+  .then(res => console.log(res))
+  .catch(error => console.error(error));
+
+//  Promise.allSettled
+
+//return all resolved promises
+
+Promise.allSettled([
+  Promise.resolve('success'),
+  Promise.reject('error'),
+  Promise.resolve('another success'),
+]).then(res => console.log(res));
+
+//Promise.any
+
+//returns the first fullfilled promise
+
+Promise.any([
+  Promise.resolve('success'),
+  Promise.reject('error'),
+  Promise.resolve('another success'),
+]).then(res => console.log(res)); //success or another success
