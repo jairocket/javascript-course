@@ -1,5 +1,5 @@
 //changing the name of imported values using 'as'
-import cloneDeep from '../../node_modules/lodash-es/cloneDeep.js';
+import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
 
 import { addToCart, totalPrice as price, qt } from './shoppingCart.js';
 
@@ -9,6 +9,12 @@ import * as ShoppingCart from './shoppingCart.js'; //convention start with capil
 
 //we can name the imported default value any way we want
 import add from './shoppingCart.js';
+
+//polifilling ES6 addictions
+import 'core-js';
+
+//polifilling async functions
+import 'regenerator-runtime/runtime';
 
 console.log('importing module');
 addToCart('bread', 5);
@@ -33,8 +39,8 @@ const getLastPost = async function () {
   return { title: data.at(-1).title, text: data.at(-1) };
 };
 
-const lastPost = await getLastPost();
-console.log(lastPost);
+// const lastPost = await getLastPost();
+// console.log(lastPost);
 
 const state = {
   cart: [
@@ -52,3 +58,7 @@ state.user.loggedIn = false;
 
 console.log(stateClone.user.loggedIn); //false
 console.log(stateDeepClone.user.loggedIn); // true
+
+if (module.hot) {
+  module.hot.accept();
+}
