@@ -105,3 +105,49 @@ JavaScript runs in one single thread, so it can do one thing at a time.
 ### Non-blocking event loop
 
 By using an **event loop**, Javascript takes long running tasks, executes them in the "background" and puts them back in the main thread once they are finished
+
+CLEAN CODE
+
+READABLE CODE
+
+- Write code so that others can understand it
+- Write code that you can understand it after a while
+- Avoid overcomplicated solutions
+- Use descriptive variable names: what they contain
+- Use descriptive function names: what they do
+
+**GENERAL**
+
+- Use DRY principle (don't repeat yourself) => refactor your code
+- Don't polute global namespace, encapsulate instead
+- Don't use var
+- Use strong type checks (=== and !===)
+
+**FUNCTIONS**
+
+- Generally, functions should do only one thing
+- Don't use more than 3 parameters
+- Use default parameters whenever possible
+- Generally, return same data type as received
+- Use arrow functions when they make code more readable
+
+**OOP**
+
+- Use ES6 classes
+- Encapsulate data and don't mutate it from outside the class
+- Implement method chaining
+- Do not use arrow functions as methods (in regular objects)
+
+**AVOID NESTED CODE**
+
+- Use early return (guard clauses)
+- Use ternary (conditional) or logical operators instead o if
+- Use multiple if instead of /f/else if
+- Avoid for loops, use array methods instead
+- Avoid callback-based asynchronous APIs
+
+**ASYNCHRONOUS CODE**
+
+- Consume promises with async/await for best readability
+- Whenever possible, run promises in parallel (promise.all)
+- Handle errors and promise rejections
