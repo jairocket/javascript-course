@@ -151,3 +151,55 @@ READABLE CODE
 - Consume promises with async/await for best readability
 - Whenever possible, run promises in parallel (promise.all)
 - Handle errors and promise rejections
+
+**IMPERATIVE PARADIGM**
+
+- Programmer explains to the computer every single step it has to follow to achieve a result
+- Ex. Step by step cake recipe
+
+<pre><code>
+const arr = [2, 4, 6, 8];
+const doubled = [];
+for (let i = 0; i < arr.length; i++){
+    doubled[i] = arr[i] * 2
+}
+</code></pre>
+
+**DECLARATIVE**
+
+- Programmer _describes_ the way the computer should achieve the result
+- Step by step get abstracted
+- Ex. Cake description
+
+<pre><code>
+const arr = [2, 4, 6, 8];
+const doubled = arr.map(n => n * 2)
+</code></pre>
+
+**Functional Programming**
+
+- Declarative programming paradigm
+
+- Based on the idea of writing software by combining many pure functions, avoiding side effects and mutating data
+
+- Side Effect: Modification (mutation) of any data outside of the function (mutating external variables, logging to console, writing to DOM, etc.)
+
+- Pure Function: Function without side effects. Does not depend on external variables. Given the same inputs, always returns the same outputs.
+
+- Immutability: State (data) is never modified! Instead, state is copied and the copy is mutated and returned.
+
+Ex. React, Redux
+
+Functional Programming Techniques
+
+- Try to avoid data mutations
+- Use built-in methods that don't produce side effects
+- Do data transformations with methods such as .map(), .filter() and .reduce()
+- Try to avoid side effects in functions: of course it is not always possible
+
+Declarative Syntax
+
+- Use array and object destructuring
+- Use spread operatpr
+- Use ternary (conditional) operator
+- Use template literals
