@@ -203,3 +203,65 @@ Declarative Syntax
 - Use spread operatpr
 - Use ternary (conditional) operator
 - Use template literals
+
+
+**Architeture**
+
+- structure -> means to organize code
+- maintainability -> we need to be able to easily change project in the future
+- expandability -> we need to be able to easily add new features
+
+We can create our own architecture or use a well-estabilished architecture pattern, like MVC, MVP, Flux, etc
+Frameworks like React, Angular, Vue, Svelte provides an architecture
+
+**COMPONENTS OF ANY ARCHITECTURE**
+
+*Business Logic*
+
+- Code that solves the actual business problem;
+- Directly related to what business does and what it needs
+
+_State_
+
+- Essentially stores all the data about the application
+- Should be the "single source of truth"
+- UI should be kept in sync with state
+- State libraries exist
+
+*HTTP LIBRARY*
+
+- Responsible for making and receiving AJAX requests
+- Optional but almost always necessary in real-world apps
+
+*Application Logic (Router)*
+
+- Code that is only concerned about the implementation of application itself
+- Handles navigation and UI events
+
+*Presentation logic (UI layer)*
+
+- Code that is concerned about visible part of the application
+- Essentially display application state
+
+
+MVC
+
+Model - > Business logic, State, Http Library
+
+Controller -> Application logic 
+
+- Bridge between model and views (which don't know about one another)
+- Handle UI events and dispatches tasks to model and view
+
+View -> Presentatiot logic
+
+
+
+
+
+
+
+
+
+
+
