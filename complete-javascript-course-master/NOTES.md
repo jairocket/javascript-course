@@ -204,7 +204,6 @@ Declarative Syntax
 - Use ternary (conditional) operator
 - Use template literals
 
-
 **Architeture**
 
 - structure -> means to organize code
@@ -216,7 +215,7 @@ Frameworks like React, Angular, Vue, Svelte provides an architecture
 
 **COMPONENTS OF ANY ARCHITECTURE**
 
-*Business Logic*
+_Business Logic_
 
 - Code that solves the actual business problem;
 - Directly related to what business does and what it needs
@@ -228,40 +227,36 @@ _State_
 - UI should be kept in sync with state
 - State libraries exist
 
-*HTTP LIBRARY*
+_HTTP LIBRARY_
 
 - Responsible for making and receiving AJAX requests
 - Optional but almost always necessary in real-world apps
 
-*Application Logic (Router)*
+_Application Logic (Router)_
 
 - Code that is only concerned about the implementation of application itself
 - Handles navigation and UI events
 
-*Presentation logic (UI layer)*
+_Presentation logic (UI layer)_
 
 - Code that is concerned about visible part of the application
 - Essentially display application state
-
 
 MVC
 
 Model - > Business logic, State, Http Library
 
-Controller -> Application logic 
+Controller -> Application logic
 
 - Bridge between model and views (which don't know about one another)
 - Handle UI events and dispatches tasks to model and view
 
-View -> Presentatiot logic
+View -> Presentation logic
 
+Publisher-Subscriber Pattern
 
+Events should be handled in the controller (otherwise we would have application logic in the view)
+Events should be listened to in the view (otherwise we would need DOM elements in the controller)
 
-
-
-
-
-
-
-
-
+Publisher => code that knows when to react
+Subscriber => code that actually reacts
