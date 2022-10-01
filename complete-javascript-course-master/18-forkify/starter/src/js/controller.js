@@ -3,7 +3,6 @@ import 'regenerator-runtime/runtime'; //polyfilling async/await
 
 import * as model from './model.js';
 import recipeView from './views/recipeView.js';
-import recipeView from './views/recipeView.js';
 
 const recipeContainer = document.querySelector('.recipe');
 
@@ -27,6 +26,7 @@ const controlRecipes = async function () {
   }
 };
 
-['hashchange', 'load'].forEach(event =>
-  window.addEventListener(event, controlRecipes)
-);
+const init = function () {
+  recipeView.addHandlerRender(controlRecipes);
+};
+init();
