@@ -1,5 +1,8 @@
 import { API_URL } from './config';
 import { getJSON } from './helpers';
+
+import 'core-js/stable'; //polyfilling ES6 methods
+import 'regenerator-runtime/runtime'; //polyfilling async/await
 export const state = {
   recipe: {},
 };
@@ -19,8 +22,8 @@ export const loadRecipe = async function (id) {
       cookingTime: recipe.cooking_time,
       ingredients: recipe.ingredients,
     };
-    console.log(state.recipe);
-  } catch (error) {
-    console.error(error);
+  } catch (err) {
+    console.log(err);
+    throw err;
   }
 };

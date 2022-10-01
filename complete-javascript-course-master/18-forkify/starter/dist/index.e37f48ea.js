@@ -550,7 +550,7 @@ const controlRecipes = async function() {
         await _modelJs.loadRecipe(id);
         (0, _recipeViewJsDefault.default).render(_modelJs.state.recipe);
     } catch (error) {
-        alert(error);
+        (0, _recipeViewJsDefault.default).renderError(error);
     }
 };
 const init = function() {
@@ -2280,8 +2280,10 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "state", ()=>state);
 parcelHelpers.export(exports, "loadRecipe", ()=>loadRecipe);
+var _webImmediateJs = require("core-js/modules/web.immediate.js");
 var _config = require("./config");
 var _helpers = require("./helpers");
+var _runtime = require("regenerator-runtime/runtime"); //polyfilling async/await
 const state = {
     recipe: {}
 };
@@ -2299,13 +2301,13 @@ const loadRecipe = async function(id) {
             cookingTime: recipe.cooking_time,
             ingredients: recipe.ingredients
         };
-        console.log(state.recipe);
-    } catch (error) {
-        console.error(error);
+    } catch (err) {
+        console.log(err);
+        throw err;
     }
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./config":"k5Hzs","./helpers":"hGI1E"}],"k5Hzs":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./config":"k5Hzs","./helpers":"hGI1E","core-js/modules/web.immediate.js":"49tUX","regenerator-runtime/runtime":"dXNgZ"}],"k5Hzs":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "API_URL", ()=>API_URL);
@@ -2332,10 +2334,10 @@ const getJSON = async function(url) {
             timeout((0, _config.TIMEOUT_SEC))
         ]);
         const data = await res.json();
-        if (!res.ok) throw new Error(`${data.message} (${error.status})`);
+        if (!res.ok) throw new Error(`${data.message} (${data.status})`);
         return data;
-    } catch (error1) {
-        throw error1;
+    } catch (error) {
+        throw error;
     }
 };
 
@@ -2350,6 +2352,8 @@ var _fractional = require("fractional");
 class RecipeView {
     #parentElement = document.querySelector(".recipe");
     #data;
+    #errorMessage = "We could not find that recipe. Please try another one!";
+    #message = "";
     render(data) {
         this.#data = data;
         const markup = this.#generateMarkup();
@@ -2375,6 +2379,34 @@ class RecipeView {
             "hashchange",
             "load"
         ].forEach((event)=>window.addEventListener(event, handler));
+    }
+    renderError(message = this.#errorMessage) {
+        const markup = `
+        <div class="error">
+            <div>
+                <svg>
+                    <use href="${(0, _iconsSvgDefault.default)}#icon-alert-triangle"></use>
+                </svg>
+            </div>
+            <p>${message}</p>
+        </div>
+    `;
+        this.#clear();
+        this.#parentElement.insertAdjacentHTML("afterbegin", markup);
+    }
+    renderMessage(message = this.#errorMessage) {
+        const markup = `
+        <div class="message">
+            <div>
+                <svg>
+                    <use href="${(0, _iconsSvgDefault.default)}#icon-smile"></use>
+                </svg>
+            </div>
+            <p>${message}</p>
+        </div>
+    `;
+        this.#clear();
+        this.#parentElement.insertAdjacentHTML("afterbegin", markup);
     }
      #generateMarkup() {
         return `

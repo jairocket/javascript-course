@@ -1550,7 +1550,7 @@
 137/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/@parcel/reporter-cli/test1664637358625839909 1
 130/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/source-map-support1664637358429838321 1
 152/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/@parcel/watcher/src/windows/win_utils.cc1664637358653840136 0
-122/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/dist/icons.21bad73c.svg1664653699886385408 0
+122/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/dist/icons.21bad73c.svg1664656938416587861 0
 156/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/@parcel/watcher/src/macos/FSEventsBackend.hh1664637358721840687 0
 142/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/source-map/lib/mapping-list.js1664637358469838645 0
 159/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/@parcel/watcher/src/shared/BruteForceBackend.cc1664637358301837284 0
@@ -2283,7 +2283,7 @@
 158/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/@parcel/core/test/fixtures/parcel/package.json1664637359281845224 0
 151/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/core-js/full/reflect/define-property.js1664643718464919304 0
 145/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/core-js/stable/typed-array/map.js1664643718928914372 0
-122/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/dist/icons.dfd7a6db.svg1664653699862385161 0
+122/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/dist/icons.dfd7a6db.svg1664656938404587716 0
 146/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/core-js/es/string/virtual/small.js1664643719044913141 0
 156/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/core-js/features/string/virtual/match-all.js1664643718932914330 0
 147/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/core-js/es/string/virtual/substr.js1664643719080912759 0
@@ -3309,7 +3309,7 @@
 146/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/@parcel/utils/src/openInBrowser.js1664637358993842891 0
 147/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/core-js/stable/string/virtual/at.js1664643718376920239 0
 129/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/nth-check/lib/esm1664637358661840201 1
-125/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/src/js/views/recipeView.js1664656732693748421 0
+125/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/src/js/views/recipeView.js1664658783168521675 0
 117/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/clone1664637358333837543 1
 141/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/domhandler/lib/index.d.ts.map1664637358349837673 0
 145/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/caniuse-lite/data/features/ime.js1664637359329845613 0
@@ -3492,7 +3492,7 @@
 140/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/cosmiconfig/dist/readFile.js1664637358417838224 0
 141/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/core-js/actual/array/slice.js1664643719040913183 0
 149/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/@swc/helpers/lib/_set_prototype_of.js1664637358849841724 0
-124/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/dist/favicon.8b2f57bf.png1664653699874385285 0
+124/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/dist/favicon.8b2f57bf.png1664656938400587668 0
 143/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/caniuse-lite/data/regions/TN.js1664637359425846391 0
 115/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/src/img/logo.png1663803971423806308 0
 143/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/css-tree/lib/lexer/structure.js1664637359145844123 0
@@ -3640,7 +3640,7 @@
 143/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/@jridgewell/set-array/README.md1664637358321837446 0
 146/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/xxhash-wasm/umd/xxhash-wasm.js.map1664637358461838581 0
 126/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/dom-serializer1664637358521839067 1
-119/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/src/js/controller.js1664656780338475941 0
+119/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/src/js/controller.js1664658989392976091 0
 142/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/@parcel/watcher/src/DirTree.cc1664637358429838321 0
 143/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/caniuse-lite/data/regions/ER.js1664637359293845321 0
 143/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/caniuse-lite/data/regions/JO.js1664637359337845678 0
@@ -3655,7 +3655,7 @@
 128/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/svgo/lib/xast.js1664637359065843474 0
 160/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/lmdb/dependencies/lmdb/libraries/liblmdb/tooltag1664637358745840882 0
 143/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/core-js/actual/function/bind.js1664643718416919814 0
-122/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/dist/index.f7626f62.css1664653699862385161 0
+122/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/dist/index.f7626f62.css1664656938384587474 0
 154/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/core-js/modules/es.object.define-setter.js1664643718520918709 0
 138/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/@parcel/compressor-raw/lib1664637358161836150 1
 127/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/dist/starter.3464ddca.js.map1664637469498725327 0
@@ -3703,7 +3703,7 @@
 148/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/core-js/stable/array/reduce-right.js1664643718992913692 0
 140/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/@parcel/package-manager/test1664637358877841951 1
 130/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/core-js/stage/0.js1664643718336920665 0
-126/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/dist/index.f7626f62.css.map1664653699866385202 0
+126/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/dist/index.f7626f62.css.map1664656938388587523 0
 163/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/@parcel/package-manager/src/MockPackageInstaller.js1664637358841841660 0
 147/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/core-js/full/instance/to-spliced.js1664643719116912378 0
 130/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/anymatch/README.md1664637445794538082 0
@@ -3839,7 +3839,7 @@
 162/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/@swc/helpers/src/_define_enumerable_properties.mjs1664637359033843216 0
 130/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/chalk/package.json1664637358341837608 0
 151/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/@parcel/packager-svg/src/SVGPackager.js1664637358257836927 0
-103/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/dist1664656780434477360 1
+103/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/dist1664659301498670653 1
 151/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/core-js/full/async-iterator/flat-map.js1664643718692916881 0
 150/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/core-js/modules/esnext.map.includes.js1664643718584918028 0
 169/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/lmdb/dependencies/lmdb-data-v1/libraries/liblmdb/mtest3.c1664637359041843280 0
@@ -3861,7 +3861,7 @@
 138/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/nth-check/lib/compile.d.ts1664637358637840007 0
 157/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/core-js/internals/async-from-sync-iterator.js1664643718368920325 0
 150/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/core-js/features/array/virtual/flat.js1664643718704916753 0
-121/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/dist/index.e37f48ea.js1664656780430477300 0
+121/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/dist/index.e37f48ea.js1664659301498670653 0
 152/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/caniuse-lite/data/features/decorators.js1664637359281845224 0
 174/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/htmlnano/docs/versioned_docs/version-1.1.1/010-introduction.md1664637358953842567 0
 159/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/@parcel/node-resolver-core/test/fixture/env-dep1664637359185844447 1
@@ -3977,7 +3977,7 @@
 161/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/core-js/actual/object/get-own-property-symbols.js1664643718772916030 0
 142/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/regenerator-runtime/runtime.js1664637358209836539 0
 157/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/@parcel/hash/parcel-hash.linux-arm64-gnu.node1664637358893842081 0
-116/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/src/js/helpers.js1664655743376280341 0
+116/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/src/js/helpers.js1664656953852772580 0
 132/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/tslib/tslib.es6.html1664637358089835566 0
 141/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/core-js/features/map/every.js1664643718624917604 0
 143/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/@parcel/source-map/dist/wasm.js1664637358717840655 0
@@ -4534,7 +4534,7 @@
 149/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/@parcel/runtime-js/lib/helpers/worker1664637358825841530 1
 139/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/@parcel/plugin/package.json1664637358301837284 0
 124/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/is-json/test1664637358317837414 1
-114/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/src/js/model.js1664655145632729703 0
+114/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/src/js/model.js1664659301414669240 0
 145/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/@parcel/runtime-react-refresh/lib1664637358157836117 1
 142/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/xxhash-wasm/esm/xxhash-wasm.js1664637358217836603 0
 142/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/core-js/es/reflect/own-keys.js1664643718964913990 0
@@ -4703,7 +4703,7 @@
 143/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/caniuse-lite/data/regions/DE.js1664637359277845192 0
 138/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/core-js/es/array/filter.js1664643718636917476 0
 161/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/@swc/helpers/lib/_define_enumerable_properties.js1664637358769841076 0
-121/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/dist/logo.726d37a8.png1664653699874385285 0
+121/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/dist/logo.726d37a8.png1664656938388587523 0
 149/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/@swc/helpers/src/_async_generator.mjs1664637358949842535 0
 149/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/@swc/helpers/src/_sliced_to_array.mjs1664637359097843734 0
 160/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/core-js/internals/async-iterator-create-proxy.js1664643718368920325 0
@@ -6761,7 +6761,7 @@
 144/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/@parcel/core/test/Parcel.test.js1664637359129843993 0
 143/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/caniuse-lite/data/regions/PS.js1664637359393846131 0
 147/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/core-js/modules/es.function.bind.js1664643718508918836 0
-125/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/dist/index.e37f48ea.js.map1664656780434477360 0
+125/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/dist/index.e37f48ea.js.map1664659301498670653 0
 143/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/caniuse-lite/data/regions/ME.js1664637359357845840 0
 135/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/to-regex-range/index.js1664637445786538019 0
 143/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/caniuse-lite/data/regions/BF.js1664637358881841984 0
@@ -7073,7 +7073,7 @@
 146/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/core-js/actual/reflect/own-keys.js1664643718964913990 0
 149/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/core-js/modules/es.array.find-last.js1664643718492919006 0
 150/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/core-js/actual/array/virtual/reduce.js1664643718996913649 0
-114/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/dist/index.html1664653699862385161 0
+114/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/dist/index.html1664656938404587716 0
 188/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/@parcel/node-resolver-core/test/fixture/node_modules/package-module-fallback1664637359201844576 1
 153/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/core-js/actual/reflect/delete-property.js1664643718472919219 0
 143/home/jailson_anjos/courses/javascript-course/complete-javascript-course-master/18-forkify/starter/node_modules/caniuse-lite/data/regions/NR.js1664637359373845969 0
