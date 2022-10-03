@@ -186,7 +186,7 @@ const doubled = arr.map(n => n * 2)
 
 - Pure Function: Function without side effects. Does not depend on external variables. Given the same inputs, always returns the same outputs.
 
-- Immutability: State (data) is never modified! Instead, state is copied and the copy is mutated and returned.
+- Immutability: State (data) is never modified! Instead, state is copied and the copy is mutated and return it.
 
 Ex. React, Redux
 
