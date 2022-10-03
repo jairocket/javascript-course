@@ -25,6 +25,8 @@ const controlRecipes = async function () {
 
     recipeView.renderSppiner();
 
+    resultsView.update(model.getSearchResultsPage());
+
     await model.loadRecipe(id);
 
     recipeView.render(model.state.recipe);
@@ -35,10 +37,9 @@ const controlRecipes = async function () {
 
 const controlSearchResults = async function () {
   try {
-    resultsView.renderSppiner();
-
     const query = searchView.getQuery();
     if (!query) return;
+    resultsView.renderSppiner();
 
     await model.loadSearchResult(query);
     resultsView.render(model.getSearchResultsPage());
@@ -51,7 +52,8 @@ const controlSearchResults = async function () {
 
 const controlServings = function (newServings) {
   model.updateServings(newServings);
-  recipeView.render(model.state.recipe);
+  // recipeView.render(model.state.recipe);
+  recipeView.update(model.state.recipe);
 };
 
 const controlPagination = function (goToPage) {

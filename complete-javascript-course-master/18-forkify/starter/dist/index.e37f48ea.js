@@ -556,6 +556,7 @@ const controlRecipes = async function() {
         const id = window.location.hash.slice(1);
         if (!id) return;
         (0, _recipeViewJsDefault.default).renderSppiner();
+        (0, _resultsViewJsDefault.default).update(_modelJs.getSearchResultsPage());
         await _modelJs.loadRecipe(id);
         (0, _recipeViewJsDefault.default).render(_modelJs.state.recipe);
     } catch (error) {
@@ -564,9 +565,9 @@ const controlRecipes = async function() {
 };
 const controlSearchResults = async function() {
     try {
-        (0, _resultsViewJsDefault.default).renderSppiner();
         const query = (0, _searchViewJsDefault.default).getQuery();
         if (!query) return;
+        (0, _resultsViewJsDefault.default).renderSppiner();
         await _modelJs.loadSearchResult(query);
         (0, _resultsViewJsDefault.default).render(_modelJs.getSearchResultsPage());
         (0, _paginationViewJsDefault.default).render(_modelJs.state.search);
@@ -576,7 +577,8 @@ const controlSearchResults = async function() {
 };
 const controlServings = function(newServings) {
     _modelJs.updateServings(newServings);
-    (0, _recipeViewJsDefault.default).render(_modelJs.state.recipe);
+    // recipeView.render(model.state.recipe);
+    (0, _recipeViewJsDefault.default).update(_modelJs.state.recipe);
 };
 const controlPagination = function(goToPage) {
     (0, _resultsViewJsDefault.default).render(_modelJs.getSearchResultsPage(goToPage));
@@ -2839,6 +2841,25 @@ class View {
         this._clear();
         this._parentElement.insertAdjacentHTML("afterbegin", markup);
     }
+    update(data) {
+        if (!data || Array.isArray(data) && data.length === 0) this._data = data;
+        const newMarkup = this._generateMarkup();
+        //create a virtual DOM object for compare with rendered DOM
+        const newDOM = document.createRange().createContextualFragment(newMarkup);
+        const newElements = Array.from(newDOM.querySelectorAll("*"));
+        const curElements = Array.from(this._parentElement.querySelectorAll("*"));
+        newElements.forEach((newEl, i)=>{
+            const curEl = curElements[i];
+            // compare both newEl and curEl
+            // filter only differences on textContent
+            // update textContent
+            if (!newEl.isEqualNode(curEl) && newEl.firstChild?.nodeValue.trim() !== "") curEl.textContent = newEl.textContent;
+            // compare both newEl and curEl
+            // filter only differences on attributes
+            // update attributes
+            if (!newEl.isEqualNode(curEl)) Array.from(newEl.attributes).forEach((attr)=>curEl.setAttribute(attr.name, attr.value));
+        });
+    }
     _clear() {
         this._parentElement.innerHTML = "";
     }
@@ -2900,9 +2921,12 @@ class ResultsView extends (0, _viewJsDefault.default) {
         return this._data.map(this._generateMarkupPreview).join("");
     }
     _generateMarkupPreview(result) {
+        const id = window.location.hash.slice(1);
+        console.log(id === result.id);
         return `
     <li class="preview">
-            <a class="preview__link" href="#${result.id}">
+    <a class="preview__link ${result.id === id ? "preview__link--active" : ""}"
+            href="#${result.id}">
               <figure class="preview__fig">
                 <img src="${result.image}" alt=${result.title} />
               </figure>
