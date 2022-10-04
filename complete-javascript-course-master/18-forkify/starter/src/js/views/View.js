@@ -2,6 +2,7 @@ import icons from 'url:../../img/icons.svg';
 
 export default class View {
   _data;
+  _message = 'Recipe was successfully uploaded :^P';
 
   render(data, render = true) {
     if (!data || (Array.isArray(data) && data.length === 0))
@@ -78,7 +79,7 @@ export default class View {
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
   }
 
-  renderMessage(message = this._errorMessage) {
+  renderMessage(message = this._message) {
     const markup = `
           <div class="message">
           <div>
